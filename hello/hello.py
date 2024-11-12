@@ -1,3 +1,6 @@
+""" Python in here interfaces with the DOM using the same functions and 
+attributes JavaScript uses, but with valid Python syntax. """
+
 from itertools import chain
 
 class SolarSystem:

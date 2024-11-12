@@ -1,5 +1,11 @@
 <script type="module">
-  import * as hello from './__target__/hello.js'; 
+  import * as hello from './__target__/hello.js';
+  
+  /* `window` is a global object encompassing all global JS functions,
+  variables, etc. Can give it attributes and values like we do here. 
+  
+  Since `hello` is part of `window` now, `hello` can be accessed via things 
+  like `onclick` */
   window.hello = hello;
 </script>
 
