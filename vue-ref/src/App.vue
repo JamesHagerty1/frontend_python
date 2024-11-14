@@ -9,7 +9,10 @@ A minimal Vue app using Vue Single File Components.
     <div>
         Count: {{ count }}
     </div>
-    <div id="clickme" @click="increment">
+    <div 
+        id="clickme" 
+        @click="increment"
+    >
         Click me to raise count!
     </div>
 </template>
