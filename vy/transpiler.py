@@ -70,7 +70,7 @@ def main():
         return num
 
     def indent_script_lines_back_by(script_lines):
-        indent_back_by = float('inf')
+        indent_back_by = float("inf")
 
         for line in script_lines:
             if not line:
