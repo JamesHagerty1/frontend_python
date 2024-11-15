@@ -43,7 +43,7 @@ def main():
 
     # print(vy_file_text)
 
-    open_tag, close_tag = "<vython>", "</vython>"
+    open_tag, close_tag = "<python>", "</python>"
 
     open_tag_end_i = vy_file_text.find(open_tag) + len(open_tag)
 
