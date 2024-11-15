@@ -6,9 +6,9 @@ Example uses:
 """
 
 
-
 import argparse
 import os
+import shutil
 
 
 def main():
@@ -25,15 +25,20 @@ def main():
 
     args = args_parser.parse_args()
 
-    print(args.target, args.output)
+    # print(args.target, args.output)
 
-    vy_file_path = args.target
+    # Create Vue base app to build off of
+    # TODO: unique names, a library that hides all this stuff
+
+    vue_base_app = "./__vue_base_app__"
+
+    shutil.copytree(vue_base_app, args.output, dirs_exist_ok=True)
 
     # Get ahold of Python code within a block of <vython></vython>
     # TODO robust / bug-free approach to acquiring what should only be one block
     # of Python
 
-    with open(vy_file_path, "r") as f:
+    with open(args.target, "r") as f:
         vy_file_text = f.read()
 
     # print(vy_file_text)
@@ -99,8 +104,8 @@ def main():
     except Exception as e:
         print(e)
 
-    # finally:
-    #     os.remove(temp_file)
+    finally:
+        os.remove(temp_file)
 
     
 if __name__ == "__main__":
