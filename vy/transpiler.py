@@ -6,7 +6,6 @@ Example uses:
 """
 
 
-from bs4 import BeautifulSoup # TODO: may eventually be good for HTML validation
 
 import argparse
 import os
