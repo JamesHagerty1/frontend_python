@@ -1,3 +1,7 @@
+<!--
+A minimal Vue app using Vue Single File Components.
+-->
+
 <template>
     <div id="hello">
         Hello!
@@ -27,9 +31,12 @@
     }
 </style>
 
-<vython>
-    count = vref(0)
+<script setup>
+    import { ref } from 'vue'
 
-    def increment():
-        count.value += 1
-</vython>
+    const count = ref(0)
+
+    function increment() {
+        count.value++
+    }
+</script>
