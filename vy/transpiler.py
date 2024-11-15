@@ -9,6 +9,7 @@ Example uses:
 from bs4 import BeautifulSoup # TODO: may eventually be good for HTML validation
 
 import argparse
+import os
 
 
 def main():
@@ -46,7 +47,61 @@ def main():
 
     script_text = vy_file_text[open_tag_end_i:close_tag_i]
 
-    print(script_text)
+    # print(script_text)
+
+    # Turn text from .vy file into a .py file that Transcrypt can turn into
+    # .js
+    # TODO: more robust way of indenting back lines, including tabs and spaces
+    # differences
+
+    def num_spaces_line_starts_with(line):
+        num = 0
+
+        for c in line:
+            if c != " ": 
+                break
+
+            num += 1
+
+        return num
+
+    def indent_script_lines_back_by(script_lines):
+        indent_back_by = float('inf')
+
+        for line in script_lines:
+            if not line:
+                continue
+
+            num = num_spaces_line_starts_with(line)
+            indent_back_by = min(indent_back_by, num)
+
+        return indent_back_by
+
+    script_lines = script_text.splitlines()
+    
+    indent_back_by = indent_script_lines_back_by(script_lines)
+
+    for i, line in enumerate(script_lines):
+        script_lines[i] = line[indent_back_by:]
+
+    script_text = "\n".join(script_lines)
+
+    # print(script_text)
+
+    temp_file = "./temp.py" # TODO unique name
+
+    try:
+        with open(temp_file, "w") as f:
+            f.write(script_text)
+
+        # TODO figure out more about this command and customize it
+        os.system(f"python -m transcrypt -b -m -n {temp_file}")
+
+    except Exception as e:
+        print(e)
+
+    # finally:
+    #     os.remove(temp_file)
 
     
 if __name__ == "__main__":
