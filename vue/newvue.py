@@ -1,7 +1,8 @@
 """
 Copies/starts a blank Vue project in a folder of your choosing, and then runs
-it locally
+it locally.
 
+Run this file like so:
 % python newvue.py your_project_name your_destination_folder_path
 """
 
