@@ -1,20 +1,19 @@
 
 
 
+class AppRoot:
 
-class App:
-
-    def __template__():
-        return """
+    def __template__(self):
+        return f"""
         <div>
             <div>
                 Hello world!
             </div>
-            <button onclick="this.hello">
+            <button onclick="self.hello">
                 Click me!
             </button>
         </div>
         """
     
-    def hello():
+    def hello(self):
         print("Hello world!")
