@@ -1,5 +1,8 @@
 """
-% python newvue.py app_name app_folder_path
+Copies/starts a blank Vue project in a folder of your choosing, and then runs
+it locally
+
+% python newvue.py your_project_name your_destination_folder_path
 """
 
 
@@ -29,7 +32,7 @@ def main():
 
         os.chdir(app_path)
 
-        #os.system("npm install && npm run dev")
+        os.system("npm install && npm run dev")
 
     except Exception as e:
         print(f"An error occurred: {e}")
