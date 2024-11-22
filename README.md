@@ -3,7 +3,8 @@ Plan:
 Make an ergonomic Python framework for developing web frontends, with JavaScript
 transpiled from Python (Transcrypt), and by building on top of Vue. Will need to
 create Python entities that can be turned into Vue, which copy all of the
-features I want.
+features I want. Will need to figure out how to create a transpiler to generate
+Vue SFCs from whatever my Python framework code will become.
 
 Other thoughts:
 
