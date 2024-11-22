@@ -19,7 +19,7 @@ def main():
 
     parser.add_argument("destination", type=str, 
                         help="Path to the destination folder")
-    
+
     args = parser.parse_args()
 
     try:

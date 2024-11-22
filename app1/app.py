@@ -9,7 +9,7 @@ class AppRoot:
             <div>
                 Hello world!
             </div>
-            <button onclick="self.hello">
+            <button @click="self.hello">
                 Click me!
             </button>
         </div>
